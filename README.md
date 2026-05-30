@@ -14,4 +14,6 @@ $$c \begin{bmatrix} x \\\\ y \end{bmatrix} = \begin{bmatrix} c \cdot x \\\\ c \c
 Linear transformation are a way to move around space such that gridline remains parallel and evenly spaced, and such that origin remain fixed.
 
 2D vector transformation:
-$$\begin{bmatrix} a & b \\\\ c & d \end{bmatrix} \begin{bmatrix} x \\\\ y \end{bmatrix} = \begin{bmatrix} a x + b y \\\\ c x + d y \end{bmatrix}$$
+```math
+\begin{bmatrix} a & b \\ c & d \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} a x + b y \\ c x + d y \end{bmatrix}
+```
