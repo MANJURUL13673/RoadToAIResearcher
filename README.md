@@ -31,3 +31,18 @@ Linear transformation are a way to move around space such that gridline remains 
 ```math
 \begin{bmatrix} a & b \\ c & d \end{bmatrix} \begin{bmatrix} e & f \\ g & h \end{bmatrix} = \begin{bmatrix} a e + b g & a f + b h \\ c e + d g & c f + d h \end{bmatrix}
 ```
+
+6. Determinant
+
+2 * 2 Matrix Determinant:
+
+```math
+\det \begin{bmatrix} a & b \\ c & d \end{bmatrix} = ad - bc
+```
+3* 3 Matrix Determinant:
+
+```math
+\det \begin{bmatrix} a & b & c \\ d & e & f \\ g & h & i \end{bmatrix} = a(ei - fh) - b(di - fg) + c(dh - eg)
+```
+
+Note: Determinant is only possible for square matrix. Number of rows = Number of columns
