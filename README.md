@@ -9,3 +9,8 @@ $$\begin{bmatrix} x_1 \\\\ y_1 \end{bmatrix} + \begin{bmatrix} x_2 \\\\ y_2 \end
 2. Scaling
 
 $$c \begin{bmatrix} x \\\\ y \end{bmatrix} = \begin{bmatrix} c \cdot x \\\\ c \cdot y \end{bmatrix}$$
+
+3. Linear Transformation
+
+2D vector transformation:
+$$\begin{bmatrix} a & b \\\\ c & d \end{bmatrix} \begin{bmatrix} x \\\\ y \end{bmatrix} = \begin{bmatrix} a x + b y \\\\ c x + d y \end{bmatrix}$$
