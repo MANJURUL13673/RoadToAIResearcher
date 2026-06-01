@@ -80,3 +80,82 @@ For a 3×3 matrix, the inverse is the adjugate (transpose of the cofactor matrix
 ```
 
 A matrix with determinant zero is **singular** and has no inverse.
+
+#### Dot Product
+
+The **dot product** of two vectors produces a single scalar. It can be computed component-wise, or geometrically from the angle between them.
+
+```math
+\mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2 + a_3 b_3 = \|\mathbf{a}\| \, \|\mathbf{b}\| \cos\theta
+```
+
+It is **zero exactly when the vectors are perpendicular**, making it the standard test for orthogonality. Each entry of a matrix product is itself a dot product of a row with a column.
+
+#### Cross Product
+
+The **cross product** of two 3D vectors produces a new vector perpendicular to both. (It is defined only in three dimensions.)
+
+```math
+\begin{bmatrix} a_1 \\ a_2 \\ a_3 \end{bmatrix} \times \begin{bmatrix} b_1 \\ b_2 \\ b_3 \end{bmatrix} = \begin{bmatrix} a_2 b_3 - a_3 b_2 \\ a_3 b_1 - a_1 b_3 \\ a_1 b_2 - a_2 b_1 \end{bmatrix}
+```
+
+It can also be written as a determinant with the unit vectors $\mathbf{i}, \mathbf{j}, \mathbf{k}$:
+
+```math
+\begin{bmatrix} a_1 \\ a_2 \\ a_3 \end{bmatrix} \times \begin{bmatrix} b_1 \\ b_2 \\ b_3 \end{bmatrix} = \det \begin{bmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \end{bmatrix}
+```
+
+Its magnitude $\|\mathbf{a}\|\|\mathbf{b}\|\sin\theta$ equals the area of the parallelogram spanned by the two vectors, and it is zero when they are parallel.
+
+#### Cramer's Rule
+
+**Cramer's rule** solves a system $A\mathbf{x} = \mathbf{b}$ using determinants. Each unknown $x_i$ is the determinant of $A$ with its $i$-th column replaced by $\mathbf{b}$, divided by $\det(A)$:
+
+```math
+x_i = \frac{\det(A_i)}{\det(A)}
+```
+
+For a 2×2 system:
+
+```math
+x = \frac{ed - bf}{ad - bc} \qquad y = \frac{af - ec}{ad - bc}
+```
+
+It requires $\det(A) \neq 0$ — the same condition under which $A$ is invertible. The rule is elegant but impractical for large systems, where elimination methods are used instead.
+
+
+**Example.** Solve the system:
+
+```math
+\begin{aligned}
+2x + y &= 5 \\
+x + 3y &= 10
+\end{aligned}
+```
+
+Write it as $A\mathbf{x} = \mathbf{b}$:
+
+```math
+\begin{bmatrix} 2 & 1 \\ 1 & 3 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 5 \\ 10 \end{bmatrix}
+```
+
+**Step 1 — main determinant** (the shared denominator):
+
+```math
+\det(A) = \det \begin{bmatrix} 2 & 1 \\ 1 & 3 \end{bmatrix} = (2)(3) - (1)(1) = 5
+```
+
+**Step 2 — solve for $x$** by replacing the first column with $\mathbf{b}$:
+
+```math
+x = \frac{\det \begin{bmatrix} 5 & 1 \\ 10 & 3 \end{bmatrix}}{\det(A)} = \frac{(5)(3) - (1)(10)}{5} = \frac{5}{5} = 1
+```
+
+**Step 3 — solve for $y$** by replacing the second column with $\mathbf{b}$:
+
+```math
+y = \frac{\det \begin{bmatrix} 2 & 5 \\ 1 & 10 \end{bmatrix}}{\det(A)} = \frac{(2)(10) - (5)(1)}{5} = \frac{15}{5} = 3
+```
+
+**Solution:** $x = 1$, $y = 3$.
+
