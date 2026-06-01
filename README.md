@@ -159,3 +159,24 @@ y = \frac{\det \begin{bmatrix} 2 & 5 \\ 1 & 10 \end{bmatrix}}{\det(A)} = \frac{(
 
 **Solution:** $x = 1$, $y = 3$.
 
+#### Eigenvalues and Eigenvectors
+
+An **eigenvector** of a matrix $A$ is a special vector whose direction is unchanged by the transformation — $A$ only stretches or shrinks it. The scaling factor is its **eigenvalue** $\lambda$.
+
+```math
+A \mathbf{v} = \lambda \mathbf{v}
+```
+
+To find them, rewrite this as $(A - \lambda I)\mathbf{v} = \mathbf{0}$. A nonzero solution exists only when the matrix is singular, giving the **characteristic equation**:
+
+```math
+\det(A - \lambda I) = 0
+```
+
+**Example.** For $A = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix}$:
+
+```math
+\det \begin{bmatrix} 2 - \lambda & 1 \\ 1 & 2 - \lambda \end{bmatrix} = (2-\lambda)^2 - 1 = 0
+```
+
+Solving gives $\lambda = 3$ (eigenvector $\begin{bmatrix} 1 \\ 1 \end{bmatrix}$) and $\lambda = 1$ (eigenvector $\begin{bmatrix} 1 \\ -1 \end{bmatrix}$).
